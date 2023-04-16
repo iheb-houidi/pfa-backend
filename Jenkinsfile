@@ -5,7 +5,7 @@ pipeline {
       maven 'maven'
       }
       stages{
-        stage("init"){
+        stage('init'){
             steps{
                 script {
                    echo "connected to github successfully"
@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-         stage("build jar"){
+         stage('build jar'){
             steps{
                 script{
                   echo "building the application..."
@@ -23,7 +23,7 @@ pipeline {
             }
          }
 
-         stage("build image"){
+         stage('build image'){
             steps{
                 script{
                     echo "building image"
@@ -37,8 +37,8 @@ pipeline {
             }
         }
          
-           stage("deploy"){
-            steps{
+           stage('deploy'){
+              steps{
                 script{
                     echo "deploying the application..."
                 }
