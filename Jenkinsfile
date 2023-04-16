@@ -23,9 +23,9 @@ pipeline {
             }
          }
 
-         stage("build image") {
-            steps {
-                script {
+         stage("build image"){
+            steps{
+                script{
                     echo "building image"
                      echo "building the docker image..."
                       withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
@@ -36,7 +36,8 @@ pipeline {
                 }
             }
         }
-         stage("deploy"){
+         
+           stage("deploy"){
             steps{
                 script{
                     echo "deploying the application..."
